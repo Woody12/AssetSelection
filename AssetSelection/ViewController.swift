@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var barView: UIView!
 	@IBOutlet weak var pageViewContainerView: UIView!
+	@IBOutlet weak var barTitleLabel: UILabel!
 	
 	private var selectContainerViewY: CGFloat!
 	private var selectContainerViewHeight: CGFloat!

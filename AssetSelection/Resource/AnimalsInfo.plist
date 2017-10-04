@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   AnimalsInfo.plist
+   AssetSelection
+
+   Created by Woody Lee on 10/3/17.
+   Copyright (c) 2017 Woody Lee. All rights reserved.
+-->
+<plist version="1.0">
+	<array>
+		<dict>
+			<key>itemImage</key>
+			<string>Penguin</string>
+		</dict>
+		<dict>
+			<key>itemImage</key>
+			<string>Penguin</string>
+		</dict>
+	</array>
+</plist>

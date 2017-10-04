@@ -13,7 +13,8 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 	lazy var VCArray: [UIViewController] = {
 		return [self.VCInstance(name: "AnimalsVC"),
 		        self.VCInstance(name: "BackgroundVC"),
-		        self.VCInstance(name: "CameraVC")]
+		        self.VCInstance(name: "CameraVC"),
+		        self.VCInstance(name: "CampaignVC")]
 	}()
 	
 	private func VCInstance(name: String) -> UIViewController {
@@ -29,6 +30,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 		if let firstVC = VCArray.first {
 			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
 		}
+		
 	}
 	
 	override func viewDidLayoutSubviews() {
