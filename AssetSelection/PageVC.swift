@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UICollectionViewDelegate {
 	
 	lazy var VCArray: [UIViewController] = {
 		return [self.VCInstance(name: "AnimalsVC"),
@@ -21,16 +21,21 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
 	}
 	
+	private func setupPageControl() {
+		let appearance = UIPageControl.appearance()
+		appearance.pageIndicatorTintColor = UIColor.gray
+		appearance.currentPageIndicatorTintColor = UIColor.purple
+		appearance.backgroundColor = UIColor.clear
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.dataSource = self
-		self.delegate = self
+		setupPageControl()
 		
 		if let firstVC = VCArray.first {
 			setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
 		}
-		
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -43,6 +48,23 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 			}
 		}
 	}
+	
+	// MARK: Collection Delegate
+	
+	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		print("selected")
+	}
+	
+//	public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//		print("deselected")
+//	}
+//
+//	public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+//		print("Highlight")
+//		return true
+//	}
+	
+	// MARK: Page View
 	
 	public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 		
@@ -86,6 +108,8 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 		return VCArray[nextIndex]
 		
 	}
+	
+	// MARK: Dot Page
 	
 	public func presentationCount(for pageViewController: UIPageViewController) -> Int {// The number of items reflected in the page indicator.
 		

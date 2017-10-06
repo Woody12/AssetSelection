@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate {
 
 	@IBOutlet weak var selectionContainerView: UIView!
 	
@@ -19,13 +19,18 @@ class ViewController: UIViewController {
 	private var selectContainerViewY: CGFloat!
 	private var selectContainerViewHeight: CGFloat!
 	
+	private var tapGesture: UITapGestureRecognizer!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+		tapGesture = UITapGestureRecognizer()
 		tapGesture.addTarget(self, action: #selector(displaySelection))
-		selectionContainerView.addGestureRecognizer(tapGesture)
+		
+		let collaspBarGesture = UITapGestureRecognizer()
+		collaspBarGesture.addTarget(self, action: #selector(animateCollaspeBar))
+		barView.addGestureRecognizer(collaspBarGesture)
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +46,10 @@ class ViewController: UIViewController {
 	}
 
 	@IBAction func DoneSelection_Click(_ sender: Any) {
-		
+		animateCollaspeBar()
+	}
+	
+	@objc func animateCollaspeBar() {
 		UIView.animate(withDuration: 0.5) {
 			var frame = self.selectionContainerView.frame
 			frame.origin.y = UIScreen.main.bounds.size.height - 20.0
@@ -49,6 +57,7 @@ class ViewController: UIViewController {
 			
 			self.barView.alpha = 0
 			self.selectionContainerView.frame = frame
+			self.selectionContainerView.addGestureRecognizer(self.tapGesture)
 		}
 	}
 	
@@ -61,7 +70,18 @@ class ViewController: UIViewController {
 			
 			self.barView.alpha = 1.0
 			self.selectionContainerView.frame = frame
+			self.selectionContainerView.removeGestureRecognizer(self.tapGesture)
 		}
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		
+		let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
+		
+		let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+		alert.addAction(alertAction)
+		
+		self.present(alert, animated: true, completion: nil)
 	}
 	
 }

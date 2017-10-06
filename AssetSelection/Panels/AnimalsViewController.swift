@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	@IBOutlet var collectionView: UICollectionView!
 	
@@ -19,10 +19,19 @@ class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICol
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		initGalleryItems()
 		collectionView.reloadData()
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if let parentDelegate = parent as? UICollectionViewDelegate {
+			collectionView.delegate = parentDelegate
+		}
+		
+	}
 	fileprivate func initGalleryItems() {
 		
 		var items = [GalleryItem]()
@@ -55,28 +64,6 @@ class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICol
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
-	}
-	
-//	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//		let commentView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "GalleryItemCommentView", for: indexPath) as! GalleryItemCommentView
-//
-//		commentView.commentLabel.text = "Supplementary view of kind \(kind)"
-//
-//		return commentView
-//	}
-	
-	// MARK: -
-	// MARK: - UICollectionViewDelegate
-	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
-		let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
-		
-		let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
-		alert.addAction(alertAction)
-		
-		self.present(alert, animated: true, completion: nil)
 	}
 	
 	// MARK: -

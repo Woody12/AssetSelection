@@ -49,7 +49,7 @@
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-ID-FVf">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="338"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="308"/>
                                         <connections>
                                             <segue destination="XqV-fm-Qye" kind="embed" id="nsi-2h-ZnW"/>
                                         </connections>
@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="398" id="Zkm-Nw-eTD"/>
                                     <constraint firstItem="iCE-ID-FVf" firstAttribute="leading" secondItem="Efe-Nq-QIb" secondAttribute="leading" id="ZmF-I6-Yrh"/>
                                     <constraint firstItem="iCE-ID-FVf" firstAttribute="top" secondItem="phB-aq-12O" secondAttribute="bottom" id="jMe-Gc-GmT"/>
-                                    <constraint firstAttribute="bottom" secondItem="iCE-ID-FVf" secondAttribute="bottom" constant="20" id="rdX-kL-yMf"/>
+                                    <constraint firstAttribute="bottom" secondItem="iCE-ID-FVf" secondAttribute="bottom" constant="50" id="rdX-kL-yMf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,59 +86,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
-        </scene>
-        <!--Temp View Controller-->
-        <scene sceneID="0ZF-R7-GzZ">
-            <objects>
-                <viewController id="uRs-IQ-JlM" customClass="TempViewController" customModule="AssetSelection" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S3W-70-fLE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smX-Hm-NpF">
-                                <rect key="frame" x="0.0" y="230" width="375" height="437"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx4-Th-zDE">
-                                        <rect key="frame" x="164.5" y="203.5" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.42027630179999997" blue="0.58419300610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Fx4-Th-zDE" firstAttribute="centerX" secondItem="smX-Hm-NpF" secondAttribute="centerX" id="0ux-HR-2Bg"/>
-                                    <constraint firstItem="Fx4-Th-zDE" firstAttribute="centerY" secondItem="smX-Hm-NpF" secondAttribute="centerY" id="B1P-RU-le7"/>
-                                    <constraint firstAttribute="height" constant="437" id="JSI-gG-Huy"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-td-3kE">
-                                <rect key="frame" x="164" y="103" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hWT-rn-p0K"/>
-                                </constraints>
-                                <state key="normal" title="action"/>
-                                <connections>
-                                    <action selector="cmdClick:" destination="uRs-IQ-JlM" eventType="touchUpInside" id="h1S-7F-3S6"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="smX-Hm-NpF" firstAttribute="bottom" secondItem="Fjr-aJ-Mv9" secondAttribute="bottom" id="0Zl-Yo-CUV"/>
-                            <constraint firstItem="aBJ-td-3kE" firstAttribute="leading" secondItem="Fjr-aJ-Mv9" secondAttribute="leading" constant="164" id="Vbx-P8-0rg"/>
-                            <constraint firstItem="smX-Hm-NpF" firstAttribute="leading" secondItem="Fjr-aJ-Mv9" secondAttribute="leading" id="aYV-fP-pfR"/>
-                            <constraint firstItem="smX-Hm-NpF" firstAttribute="trailing" secondItem="Fjr-aJ-Mv9" secondAttribute="trailing" id="lXs-Ic-Kjz"/>
-                            <constraint firstItem="aBJ-td-3kE" firstAttribute="top" secondItem="Fjr-aJ-Mv9" secondAttribute="top" constant="83" id="mFu-QQ-szg"/>
-                            <constraint firstItem="Fjr-aJ-Mv9" firstAttribute="trailing" secondItem="aBJ-td-3kE" secondAttribute="trailing" constant="165" id="z9E-TF-cJ1"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Fjr-aJ-Mv9"/>
-                    </view>
-                    <connections>
-                        <outlet property="assetView" destination="smX-Hm-NpF" id="Rd0-Eh-fQr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E7S-zm-Kxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-314.39999999999998" y="828.93553223388312"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="GVD-ZK-4of">
@@ -169,30 +116,31 @@
                                     <constraint firstAttribute="height" constant="250" id="haa-l6-7hT"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="egF-Tx-Md8">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryItemCollectionViewCell" id="bDz-sW-HJf" customClass="GalleryItemCollectionViewCell" customModule="AssetSelection" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="GalleryItemCollectionViewCell" id="bDz-sW-HJf" customClass="GalleryItemCollectionViewCell" customModule="AssetSelection" customModuleProvider="target">
+                                        <rect key="frame" x="77.5" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lml-4r-Sxm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lml-4r-Sxm">
+                                                    <rect key="frame" x="10" y="10" width="180" height="180"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="lml-4r-Sxm" secondAttribute="trailing" id="0Q9-GM-dsH"/>
-                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="leading" secondItem="bDz-sW-HJf" secondAttribute="leading" id="13b-AX-gi6"/>
-                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="top" secondItem="bDz-sW-HJf" secondAttribute="top" id="O5B-mc-IFC"/>
-                                            <constraint firstAttribute="bottom" secondItem="lml-4r-Sxm" secondAttribute="bottom" id="aPI-ee-tK9"/>
+                                            <constraint firstAttribute="trailing" secondItem="lml-4r-Sxm" secondAttribute="trailing" constant="10" id="0Q9-GM-dsH"/>
+                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="leading" secondItem="bDz-sW-HJf" secondAttribute="leading" constant="10" id="13b-AX-gi6"/>
+                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="top" secondItem="bDz-sW-HJf" secondAttribute="top" constant="10" id="O5B-mc-IFC"/>
+                                            <constraint firstAttribute="bottom" secondItem="lml-4r-Sxm" secondAttribute="bottom" constant="10" id="aPI-ee-tK9"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="itemImageView" destination="lml-4r-Sxm" id="wYp-EF-IgD"/>
@@ -201,7 +149,6 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="vuf-vn-zeK" id="nU3-PN-46E"/>
-                                    <outlet property="delegate" destination="vuf-vn-zeK" id="GbF-7K-HyK"/>
                                 </connections>
                             </collectionView>
                         </subviews>
