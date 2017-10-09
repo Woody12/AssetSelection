@@ -18,7 +18,6 @@
 		D8F461B61F7E0B7A005EEC58 /* AssetSelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F461B51F7E0B7A005EEC58 /* AssetSelectionTests.swift */; };
 		D8F461C11F7E0B7A005EEC58 /* AssetSelectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F461C01F7E0B7A005EEC58 /* AssetSelectionUITests.swift */; };
 		D8F4620B1F802E1A005EEC58 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4620A1F802E1A005EEC58 /* PageVC.swift */; };
-		D8F4620D1F80B396005EEC58 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4620C1F80B396005EEC58 /* TempViewController.swift */; };
 		D8F462101F835397005EEC58 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F4620F1F835397005EEC58 /* AnimalsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		D8F461C01F7E0B7A005EEC58 /* AssetSelectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectionUITests.swift; sourceTree = "<group>"; };
 		D8F461C21F7E0B7A005EEC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F4620A1F802E1A005EEC58 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
-		D8F4620C1F80B396005EEC58 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		D8F4620F1F835397005EEC58 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +139,6 @@
 				D8F461A21F7E0B7A005EEC58 /* ViewController.swift */,
 				D8F4620A1F802E1A005EEC58 /* PageVC.swift */,
 				D8F461A41F7E0B7A005EEC58 /* Main.storyboard */,
-				D8F4620C1F80B396005EEC58 /* TempViewController.swift */,
 				D8F461A71F7E0B7A005EEC58 /* Assets.xcassets */,
 				D8F461A91F7E0B7A005EEC58 /* LaunchScreen.storyboard */,
 				D8F461AC1F7E0B7A005EEC58 /* Info.plist */,
@@ -312,7 +309,6 @@
 			files = (
 				D8F462101F835397005EEC58 /* AnimalsViewController.swift in Sources */,
 				D857B2C91F848DE5001BAD81 /* GalleryItem.swift in Sources */,
-				D8F4620D1F80B396005EEC58 /* TempViewController.swift in Sources */,
 				D857B2CC1F849094001BAD81 /* GalleryItemCollectionViewCell.swift in Sources */,
 				D8F461A31F7E0B7A005EEC58 /* ViewController.swift in Sources */,
 				D8F4620B1F802E1A005EEC58 /* PageVC.swift in Sources */,

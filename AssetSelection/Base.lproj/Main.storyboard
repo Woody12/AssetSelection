@@ -116,31 +116,31 @@
                                     <constraint firstAttribute="height" constant="250" id="haa-l6-7hT"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="egF-Tx-Md8">
-                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="GalleryItemCollectionViewCell" id="bDz-sW-HJf" customClass="GalleryItemCollectionViewCell" customModule="AssetSelection" customModuleProvider="target">
-                                        <rect key="frame" x="77.5" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lml-4r-Sxm">
-                                                    <rect key="frame" x="10" y="10" width="180" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="lml-4r-Sxm" secondAttribute="trailing" constant="10" id="0Q9-GM-dsH"/>
-                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="leading" secondItem="bDz-sW-HJf" secondAttribute="leading" constant="10" id="13b-AX-gi6"/>
-                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="top" secondItem="bDz-sW-HJf" secondAttribute="top" constant="10" id="O5B-mc-IFC"/>
-                                            <constraint firstAttribute="bottom" secondItem="lml-4r-Sxm" secondAttribute="bottom" constant="10" id="aPI-ee-tK9"/>
+                                            <constraint firstAttribute="trailing" secondItem="lml-4r-Sxm" secondAttribute="trailing" id="0Q9-GM-dsH"/>
+                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="leading" secondItem="bDz-sW-HJf" secondAttribute="leading" id="13b-AX-gi6"/>
+                                            <constraint firstItem="lml-4r-Sxm" firstAttribute="top" secondItem="bDz-sW-HJf" secondAttribute="top" id="O5B-mc-IFC"/>
+                                            <constraint firstAttribute="bottom" secondItem="lml-4r-Sxm" secondAttribute="bottom" id="aPI-ee-tK9"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="itemImageView" destination="lml-4r-Sxm" id="wYp-EF-IgD"/>
@@ -149,6 +149,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="vuf-vn-zeK" id="nU3-PN-46E"/>
+                                    <outlet property="delegate" destination="vuf-vn-zeK" id="q62-Ka-aLH"/>
                                 </connections>
                             </collectionView>
                         </subviews>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UICollectionViewDelegate {
+class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 	
 	lazy var VCArray: [UIViewController] = {
 		return [self.VCInstance(name: "AnimalsVC"),
@@ -22,14 +22,19 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 	}
 	
 	private func setupPageControl() {
-		let appearance = UIPageControl.appearance()
-		appearance.pageIndicatorTintColor = UIColor.gray
-		appearance.currentPageIndicatorTintColor = UIColor.purple
-		appearance.backgroundColor = UIColor.clear
+
+		// Configure page indicator dot colors
+		let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [PageVC.self])
+		pageControl.pageIndicatorTintColor = .lightGray
+		pageControl.currentPageIndicatorTintColor = .purple
+		pageControl.backgroundColor = .clear
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// Install this class as the data source
+		dataSource = self
 		
 		setupPageControl()
 		
@@ -48,21 +53,6 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 			}
 		}
 	}
-	
-	// MARK: Collection Delegate
-	
-	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("selected")
-	}
-	
-//	public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//		print("deselected")
-//	}
-//
-//	public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-//		print("Highlight")
-//		return true
-//	}
 	
 	// MARK: Page View
 	

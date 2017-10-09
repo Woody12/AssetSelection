@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate {
+//, UICollectionViewDelegate
+class ViewController: UIViewController {
 
 	@IBOutlet weak var selectionContainerView: UIView!
 	
@@ -74,15 +75,15 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 		}
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
-		let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
-		
-		let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
-		alert.addAction(alertAction)
-		
-		self.present(alert, animated: true, completion: nil)
-	}
-	
+//	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//		let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
+//
+//		let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+//		alert.addAction(alertAction)
+//
+//		self.present(alert, animated: true, completion: nil)
+//	}
+//
 }
 

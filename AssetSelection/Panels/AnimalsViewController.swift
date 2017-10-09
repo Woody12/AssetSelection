@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 	
 	@IBOutlet var collectionView: UICollectionView!
 	
@@ -27,9 +28,9 @@ class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICol
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		if let parentDelegate = parent as? UICollectionViewDelegate {
-			collectionView.delegate = parentDelegate
-		}
+//		if let parentDelegate = parent as? UICollectionViewDelegate {
+//			collectionView.delegate = parentDelegate
+//		}
 		
 	}
 	fileprivate func initGalleryItems() {
@@ -66,16 +67,23 @@ class AnimalsViewController: UIViewController, UICollectionViewDataSource, UICol
 		return 1
 	}
 	
+	// MARK: Collection Delegate
+	
+	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		print("selected")
+	}
+
+	
 	// MARK: -
 	// MARK: - UICollectionViewFlowLayout
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let picDimension = self.view.frame.size.width / 4.0
+		let picDimension = self.view.frame.size.width / 6.0
 		return CGSize(width: picDimension, height: picDimension)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		let leftRightInset = self.view.frame.size.width / 14.0
-		return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+		let leftRightInset = self.view.frame.size.width / 20.0
+		return UIEdgeInsetsMake(20.0, leftRightInset, 0, leftRightInset)
 	}
 }
